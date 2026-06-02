@@ -45,7 +45,6 @@ function navigateTo(screen) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const el = document.getElementById(`screen-${screen}`);
   if (el) el.classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   // Populate screens on visit
   if (screen === 'dashboard')    renderDashboard();
@@ -417,7 +416,7 @@ function buildSuitcaseEstimate() {
   const total     = allItems.length;
   const checked   = allItems.filter(i => i.checked).length;
   const unchecked = total - checked;
-  const sizeCap   = { cabin: '40L', medium: '75L', large: '120L' };
+  const sizeCap   = { cabin: '≤7kg', medium: '10-15kg', large: '20kg+' };
   const used = trip.suitcase;
 
   document.getElementById('suitcase-summary').innerHTML = `
